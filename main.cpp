@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
 int main()
@@ -49,12 +50,12 @@ int main()
     /*
         資料型別
     */
-    int intNumber = 5;              // 整數
-    float floatNumber = 6.66;       // 單精浮點數: 通常占用4個位元組(32位元)的空間，範圍±3.4e38
-    double doubleNumber = 9.99;     // 雙精浮點數: 通常占用8個位元組(64位元)的空間，範圍±1.7e308 (double 占用的記憶體數會比float還多)
-    char letter = 'A';              // char: 只能儲存單一字元，並且使用''包圍，主要處理單一字元的操作
-    bool boolean = true;            // 布林值
-    string stringText;              // 字串
+    int intNumber = 5;          // 整數
+    float floatNumber = 6.66;   // 單精浮點數: 通常占用4個位元組(32位元)的空間，範圍±3.4e38
+    double doubleNumber = 9.99; // 雙精浮點數: 通常占用8個位元組(64位元)的空間，範圍±1.7e308 (double 占用的記憶體數會比float還多)
+    char letter = 'A';          // char: 只能儲存單一字元，並且使用''包圍，主要處理單一字元的操作
+    bool boolean = true;        // 布林值
+    string stringText;          // 字串
 
     float f1 = 35e3;
     double d1 = 12E4;
@@ -126,6 +127,202 @@ int main()
     cout << "如何插入雙引號\"\"" << endl;
     cout << "如何插入單引號\'" << endl;
     cout << "如何插入單一反斜線\\" << endl;
+
+    /*
+        數學
+        需include cmath
+
+        abs(x) 返回x的絕對值
+        acos(x) 返回x的反餘弦值
+        asin(x) 返回x的反正弦值
+        atan(x) 返回x的反正切值
+        cbrt(x) 返回x的立方根
+        ceil(x) 返回將x四舍五入到最接近的整數的值
+        cos(x) 返回x的余弦值
+        cosh(x) 返回x的雙曲余弦值
+        exp(x) 返回e的x次方的值
+        expm1(x) 返回e的x次方减1的值
+        fabs(x) 返回浮點數x的絕對值
+        fdim(x, y) 返回x和y之間的正差
+        floor(x) 返回將x四捨五入到最接近的整數的值
+        hypot(x, y) 返回sqrt(x^2 + y^2)而不會出現中間溢出或下溢
+        fma(x, y, z) 返回x*y+z，而不會失去精度
+        fmax(x, y) 返回浮點數x和y中的最大值
+        fmin(x, y) 返回浮點數x和y中的最小值
+        fmod(x, y) 返回x/y的浮點餘數
+        pow(x, y) 返回x的y次方的值
+        sin(x) 返回x的正弦值（x以弧度表示）
+        sinh(x) 返回雙曲正弦值
+        tan(x) 返回角度的正切值
+        tanh(x) 返回雙曲正切值
+    */
+    cout << "找出最大數: " << max(5, 10) << endl;
+    cout << "找出最小數: " << min(5, 10) << endl;
+    cout << "平方根: " << sqrt(64) << endl;
+    cout << "四捨五入: " << round(2.6) << endl;
+    cout << "log(自然對數)" << log(2) << endl;
+
+    /*
+        switch
+    */
+    int numberOne = 1;
+    switch (numberOne)
+    {
+    case 1:
+        cout << "數字一" << endl;
+        break;
+    case 2:
+        cout << "數字二" << endl;
+        break;
+    case 3:
+        cout << "數字三" << endl;
+        break;
+    default:
+        cout << "找不到對應數" << endl;
+    }
+
+    /*
+        while loop
+    */
+    int i = 0;
+    cout << "while loop" << endl;
+    while (i < 5)
+    {
+        cout << "i: " << i << endl;
+        i++;
+    }
+
+    /*
+        do/while loop
+    */
+    i = 0;
+    cout << "do/while loop" << endl;
+    do
+    {
+        cout << "i: " << i << endl;
+        i++;
+    } while (i < 5);
+
+    /*
+        for loop
+    */
+    cout << "for loop" << endl;
+    for (int i = 0; i < 5; i++)
+    {
+        cout << "i: " << i << endl;
+    }
+
+    /*
+        foreach
+    */
+    int myNumbers[5] = {10, 20, 30, 40, 50};
+    for (int i : myNumbers)
+    {
+        cout << i << endl;
+    }
+
+    /*
+        break and continue
+    */
+    cout << "break example" << endl;
+    for (int i = 0; i < 10; i++)
+    {
+        if (i == 4)
+        {
+            cout << "i == 4 => break" << endl;
+            break;
+        }
+        cout << "i: " << i << endl;
+    }
+
+    cout << "continue example" << endl;
+    for (int i = 0; i < 10; i++)
+    {
+        if (i == 4)
+        {
+            cout << "i == 4 continue";
+            continue;
+        }
+        cout << "i: " << i << endl;
+    }
+
+    /*
+        Array
+    */
+    string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+    int myNub[3] = {10, 20, 30};
+    cout << "cars[0]: " << cars[0] << endl;
+    cars[0] = "Opel";
+    cout << "new cars[0]: " << cars[0] << endl;
+    /*
+        foreach
+        for (type variableName : arrayName) {
+            // code block to be executed
+        }
+    */
+    // Omit Array Size
+    string omitArraySize[] = {"Volvo", "BMW", "Ford"};
+    int omitElement[5];
+    omitElement[0] = 0;
+    omitElement[1] = 1;
+
+    // get array size
+    cout << "cars array size: " << sizeof(cars) << " bytes." << endl;
+    // get array length
+    int getArrayLength = sizeof(cars) / sizeof(string); // 什麼資料型態就將型態帶入sizeof
+    cout << "cars array length: " << getArrayLength << endl;
+
+    /*
+        多維陣列
+    */
+    string letters[2][4] = {
+        {"A", "B", "C", "D"},
+        {"E", "F", "G", "H"}};
+    string letters2[2][2][2] = {
+        {{"A", "B"},
+         {"C", "D"}},
+        {{"E", "F"},
+         {"G", "H"}}};
+
+    /*
+        Structures (struct)
+    */
+    struct {
+        int myNum;
+        string myString;
+    } myStructure, myStructure2, myStructure3; // 使用,可以新增變數
+
+    myStructure.myNum = 1;
+    myStructure.myString = "hello world";
+
+    cout << "myStructure: " << myStructure.myNum << ", " << myStructure.myString << endl;
+
+    // Named Structures(命名結構)
+    struct myDataType {
+        int myNum;
+        string myString;
+    };
+
+    myDataType myVar;
+    myVar.myNum = 20;
+    myVar.myString = "hello";
+
+    /*
+        References(引用)
+    */
+    string food = "Pizza";
+    string &meal = food;
+    cout << "food: " << food << endl;
+    cout << "meal: " << meal << endl;
+    meal = "P";
+    cout << "food: " << food << endl;
+    cout << "meal: " << meal << endl;
+    cout << "food記憶體位址: " << &food << endl;
+    cout << "meal記憶體位址: " << &meal << endl;
+
+    /*
+        指針
+    */
 
     return 0;
 }
