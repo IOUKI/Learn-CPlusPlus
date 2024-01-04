@@ -127,7 +127,5 @@ int main()
     cout << "如何插入單引號\'" << endl;
     cout << "如何插入單一反斜線\\" << endl;
 
-
-
     return 0;
 }
