@@ -10,8 +10,7 @@ int main()
     /*
         這是多行註解
     */
-    cout << "Hello World\n"
-         << endl;
+    cout << "Hello World\n" << endl;
     cout << "I am learning C++\n";
 
     /*
@@ -322,7 +321,18 @@ int main()
 
     /*
         指針
+        也可以使用以下方法使用指針
+        string* mystring; <= 首選用法
+        string *mystring;
+        string * mystring;
     */
+    string* ptr = &food; // 創建指針
+    cout << "food: " << food << endl;
+    cout << "foot memory address: " << &food << endl;
+    cout << "ptr(取得記憶體位址): " << ptr << endl;
+    cout << "*ptr(取得記憶體位址的數值): " << *ptr << endl;
+    *ptr = "Hamburger";
+    cout << "修改指針的數值: food " << food << " *ptr " << *ptr << endl;
 
     return 0;
 }
