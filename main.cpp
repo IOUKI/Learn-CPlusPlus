@@ -3,8 +3,7 @@
 #include <cmath>
 using namespace std;
 
-int main()
-{
+int main() {
     // cout: 輸出
     // endl: 換行等同\n
     /*
@@ -165,8 +164,7 @@ int main()
         switch
     */
     int numberOne = 1;
-    switch (numberOne)
-    {
+    switch (numberOne) {
     case 1:
         cout << "數字一" << endl;
         break;
@@ -185,8 +183,7 @@ int main()
     */
     int i = 0;
     cout << "while loop" << endl;
-    while (i < 5)
-    {
+    while (i < 5) {
         cout << "i: " << i << endl;
         i++;
     }
@@ -196,8 +193,7 @@ int main()
     */
     i = 0;
     cout << "do/while loop" << endl;
-    do
-    {
+    do {
         cout << "i: " << i << endl;
         i++;
     } while (i < 5);
@@ -206,17 +202,15 @@ int main()
         for loop
     */
     cout << "for loop" << endl;
-    for (int i = 0; i < 5; i++)
-    {
+    for (int i = 0; i < 5; i++) {
         cout << "i: " << i << endl;
     }
 
     /*
         foreach
     */
-    int myNumbers[5] = {10, 20, 30, 40, 50};
-    for (int i : myNumbers)
-    {
+    int myNumbers[5] = { 10, 20, 30, 40, 50 };
+    for (int i : myNumbers) {
         cout << i << endl;
     }
 
@@ -224,10 +218,8 @@ int main()
         break and continue
     */
     cout << "break example" << endl;
-    for (int i = 0; i < 10; i++)
-    {
-        if (i == 4)
-        {
+    for (int i = 0; i < 10; i++) {
+        if (i == 4) {
             cout << "i == 4 => break" << endl;
             break;
         }
@@ -235,10 +227,8 @@ int main()
     }
 
     cout << "continue example" << endl;
-    for (int i = 0; i < 10; i++)
-    {
-        if (i == 4)
-        {
+    for (int i = 0; i < 10; i++) {
+        if (i == 4) {
             cout << "i == 4 continue";
             continue;
         }
@@ -248,8 +238,8 @@ int main()
     /*
         Array
     */
-    string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
-    int myNub[3] = {10, 20, 30};
+    string cars[4] = { "Volvo", "BMW", "Ford", "Mazda" };
+    int myNub[3] = { 10, 20, 30 };
     cout << "cars[0]: " << cars[0] << endl;
     cars[0] = "Opel";
     cout << "new cars[0]: " << cars[0] << endl;
@@ -260,7 +250,7 @@ int main()
         }
     */
     // Omit Array Size
-    string omitArraySize[] = {"Volvo", "BMW", "Ford"};
+    string omitArraySize[] = { "Volvo", "BMW", "Ford" };
     int omitElement[5];
     omitElement[0] = 0;
     omitElement[1] = 1;
@@ -276,12 +266,12 @@ int main()
     */
     string letters[2][4] = {
         {"A", "B", "C", "D"},
-        {"E", "F", "G", "H"}};
+        {"E", "F", "G", "H"} };
     string letters2[2][2][2] = {
         {{"A", "B"},
          {"C", "D"}},
         {{"E", "F"},
-         {"G", "H"}}};
+         {"G", "H"}} };
 
     /*
         Structures (struct)
@@ -310,7 +300,7 @@ int main()
         References(引用)
     */
     string food = "Pizza";
-    string &meal = food;
+    string& meal = food;
     cout << "food: " << food << endl;
     cout << "meal: " << meal << endl;
     meal = "P";
