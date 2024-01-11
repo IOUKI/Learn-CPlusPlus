@@ -71,6 +71,28 @@ class Employee {
         }
 };
 
+/*
+繼承
+*/
+class Parent {
+    public:
+        string parentVar;
+        Parent() {
+            parentVar = "parentVar";
+        }
+        void parentMethod() {
+            cout << "parent method" << endl;
+        }
+};
+
+class Child: public Parent {
+    public:
+        string childVar;
+        Child() {
+            childVar = "childVar";
+        }
+};
+
 int main() {
     MyClass myObj; // 創建MyClass物件
     myObj.myNum = 24;
@@ -88,6 +110,10 @@ int main() {
     empObj.setSalary(50000);
     cout << empObj.getSalary() << endl;
     // cout << empObj.salary << endl; <= 因為salar屬性為private，所以不能直接取用
+
+    Child childObj;
+    childObj.parentMethod();
+    cout << childObj.childVar << endl;
 
     return 0;
 }
