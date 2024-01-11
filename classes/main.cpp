@@ -93,6 +93,61 @@ class Child: public Parent {
         }
 };
 
+// 多層級繼承
+class Child2: public Child {
+};
+
+class OtherParent {
+    public:
+        void otherParentMethod() {
+            cout << "other parent method" << endl;
+        }
+};
+
+// 多重繼承
+class OtherCild: public Parent, public OtherParent {
+};
+
+// 繼承訪問
+class Access {
+    protected:
+        int salary;
+};
+
+class Programmer: public Access {
+    public:
+        int bonus;
+        void setSalary(int s) {
+            salary = s;
+        }
+        int getSalary() {
+            return salary;
+        }
+};
+
+/*
+多態性
+多態性意味著“多種形式”，當我們有許多透過繼承相互關聯的類別時，就會發生多態性。
+*/
+class Animal {
+    public:
+        void animalSound() {
+            cout << "The animal makes a sound" << endl;
+        }
+};
+class Pig: public Animal {
+    public:
+        void animalSound() {
+            cout << "The pig says: wee wee" << endl;
+        }
+};
+class Dog: public Animal {
+    public:
+        void animalSound() {
+            cout << "The dog says: bow bow" << endl;
+        }
+};
+
 int main() {
     MyClass myObj; // 創建MyClass物件
     myObj.myNum = 24;
@@ -114,6 +169,28 @@ int main() {
     Child childObj;
     childObj.parentMethod();
     cout << childObj.childVar << endl;
+    Child2 child2Obj;
+    child2Obj.parentMethod();
+
+    // 多重繼承
+    OtherCild otherClid;
+    otherClid.parentMethod();
+    otherClid.otherParentMethod();
+
+    // 繼承訪問
+    Programmer p;
+    p.setSalary(501);
+    p.bonus = 15000;
+    cout << "Salary: " << p.getSalary() << endl;
+    cout << "Bonus: " << p.bonus << endl;
+
+    // 多態性
+    Animal myAnimal;
+    Pig myPig;
+    Dog myDog;
+    myAnimal.animalSound();
+    myPig.animalSound();
+    myDog.animalSound();
 
     return 0;
 }
